@@ -19,8 +19,9 @@ pour remplacer le site Framer (capsulepilatesclub.com, domaine chez OVH).
 
 ## À faire avant la bascule
 
-- [ ] Liens bsport des nouvelles formules : 4, 6, 12 cours, Day Club, Abonnement Studio 4 séances
-      (pour l'instant → page d'inscription bsport). Le 8 cours (32001) et les cartes sont branchés.
+- [x] Liens bsport : chaque carte pointe vers sa formule du catalogue bsport (relevé du 13/11/2026 via l'API publique
+      `buyable` de bsport, company 4121). Boutique complète : https://backoffice.bsport.io/m/CAPSULE%20PILATES%20CLUB/4121/subscription/
+      (abonnements) et …/4121/pass/ (cartes)
 - [ ] Lien bsport de l'offre Black Friday (aujourd'hui → Instagram)
 - [x] Dossier `dev/` (pages de maquettes) exclu du dépôt via `.gitignore` : il reste en local, jamais publié
 - [x] Photo de la fondatrice (assets/img/fondatrice-emmanuelle-berges.jpg)
