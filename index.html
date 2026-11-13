@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/studio-reformer.jpg">
-<link rel="stylesheet" href="css/style.css?v=20261114c">
+<link rel="stylesheet" href="css/style.css?v=20261114e">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,7 +56,7 @@
   <div class="hero__veil"></div>
 
   <div class="topbar">
-    <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="main-nav">
+    <button class="topbar__burger" type="button" aria-expanded="false" aria-controls="mobile-nav">
       <span class="sr-only">Menu</span><span></span><span></span>
     </button>
     <nav id="main-nav" class="topbar__nav" aria-label="Navigation principale">
@@ -89,6 +89,27 @@
     </div>
   </div>
 </header>
+
+<!-- Menu mobile : panneau beige qui glisse depuis la gauche -->
+<div class="mnav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu" hidden>
+  <div class="mnav__backdrop" data-mnav-close></div>
+  <div class="mnav__panel">
+    <button class="mnav__close" type="button" data-mnav-close aria-label="Fermer le menu"><span></span><span></span></button>
+    <p class="mnav__label">Menu</p>
+    <nav class="mnav__list" aria-label="Navigation mobile">
+      <a href="#disciplines">Disciplines</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#planning">Planning</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="mnav__offer">
+      <p class="mnav__label">Offre découverte</p>
+      <p class="mnav__offer-title">2 séances pour 50 €</p>
+      <a class="btn btn--navy" href="https://backoffice.bsport.io/customer/payment/pass/681958/?membership=4121&amp;force=true" target="_blank" rel="noopener">Réserver</a>
+    </div>
+  </div>
+</div>
 
 <main>
 
@@ -671,6 +692,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20261114c" defer></script>
+<script src="js/main.js?v=20261114e" defer></script>
 </body>
 </html>

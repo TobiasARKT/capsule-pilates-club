@@ -1,18 +1,44 @@
 // CAPSULE Pilates Club — petits comportements de la page
 (function () {
-  // Menu mobile
+  // En-tête fixe : fond flouté dès que la page a défilé
+  var topbar = document.querySelector('.topbar');
+  if (topbar) {
+    var setScrolled = function () { topbar.classList.toggle('is-scrolled', window.scrollY > 24); };
+    window.addEventListener('scroll', setScrolled, { passive: true });
+    setScrolled();
+  }
+
+  // Menu mobile : panneau latéral (ouvert par le burger, fermé par la croix, le fond, Échap ou un lien)
   var burger = document.querySelector('.topbar__burger');
-  var nav = document.getElementById('main-nav');
-  if (burger && nav) {
-    burger.addEventListener('click', function () {
-      var open = nav.classList.toggle('is-open');
-      burger.setAttribute('aria-expanded', String(open));
+  var mnav = document.getElementById('mobile-nav');
+  if (burger && mnav) {
+    var closeTimer = null;
+    var openNav = function () {
+      clearTimeout(closeTimer);
+      mnav.hidden = false;
+      document.documentElement.classList.add('mnav-open');
+      burger.setAttribute('aria-expanded', 'true');
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () { mnav.classList.add('is-open'); });
+      });
+      mnav.querySelector('.mnav__close').focus();
+    };
+    var closeNav = function (keepFocus) {
+      mnav.classList.remove('is-open');
+      document.documentElement.classList.remove('mnav-open');
+      burger.setAttribute('aria-expanded', 'false');
+      closeTimer = setTimeout(function () { mnav.hidden = true; }, 400);
+      if (!keepFocus) burger.focus();
+    };
+    burger.addEventListener('click', openNav);
+    mnav.querySelectorAll('[data-mnav-close]').forEach(function (el) {
+      el.addEventListener('click', function () { closeNav(false); });
     });
-    nav.addEventListener('click', function (e) {
-      if (e.target.closest('a')) {
-        nav.classList.remove('is-open');
-        burger.setAttribute('aria-expanded', 'false');
-      }
+    mnav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { closeNav(true); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !mnav.hidden) closeNav(false);
     });
   }
 
