@@ -3,12 +3,12 @@
 :root {
   --cream: #f6f2ec;
   --sage: #a3a593;
-  --navy: #141a2b;
+  --navy: #2A3A43;
   --ink: #111111;
   --black: #000000;
   --white: #ffffff;
 
-  --text: #141a2b;
+  --text: #2A3A43;
   --text-muted: #3a3f4c;
   --text-brown: #6b5a48;
   --light: #e8e2d8;
@@ -136,7 +136,7 @@ button { font: inherit; cursor: pointer; }
 }
 .topbar.is-scrolled {
   padding-top: 10px; padding-bottom: 10px;
-  background-color: rgba(20, 26, 43, .72); border-bottom-color: rgba(255, 255, 255, .08);
+  background-color: rgba(42, 58, 67, .72); border-bottom-color: rgba(255, 255, 255, .08);
   -webkit-backdrop-filter: blur(14px) saturate(140%); backdrop-filter: blur(14px) saturate(140%);
 }
 .topbar__logo img { transition: height .35s; }
@@ -229,7 +229,7 @@ html.mnav-open { overflow: hidden; }
 .why__counter {
   position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 28px; color: var(--white);
   display: flex; align-items: center; gap: 20px;
-  background: linear-gradient(transparent, rgba(20, 26, 43, .9));
+  background: linear-gradient(transparent, rgba(42, 58, 67, .9));
 }
 .why__counter b { font-family: var(--serif); font-weight: 400; font-size: 44px; line-height: 1; }
 .why__counter span { font-size: 14px; color: var(--light); }
