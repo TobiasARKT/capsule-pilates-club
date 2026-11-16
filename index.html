@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/hero-studio.jpg">
-<link rel="stylesheet" href="css/style.css?v=20261116g">
+<link rel="stylesheet" href="css/style.css?v=20261116h">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -365,110 +365,146 @@
 
     <div class="trial">
       <div class="trial__main">
-        <p class="trial__label">Offre découverte</p>
+        <p class="trial__label">Première fois ? Offre découverte</p>
         <p class="trial__title">2 séances pour 50 €</p>
       </div>
-      <p class="trial__text">Testez le Reformer, le Strength ou le cours de votre choix, en small group.</p>
+      <p class="trial__text">Testez le Reformer, le Strength ou le cours de votre choix, en small group. Accueil personnalisé et découverte avec un coach. Valable 1 mois.</p>
       <a class="btn btn--navy trial__btn" href="https://backoffice.bsport.io/customer/payment/pass/681958/?membership=4121&amp;force=true" target="_blank" rel="noopener">Réserver mes 2 séances</a>
     </div>
 
     <!-- Liens bsport : catalogue public bsport (API buyable, company 4121), relevé le 13/11/2026. Boutique complète : /m/CAPSULE%20PILATES%20CLUB/4121/subscription/ et /pass/ -->
-    <div class="tarifs__tabs" role="tablist" aria-label="Familles de formules">
-      <div class="tarifs__group">
-        <p class="tarifs__group-label">Toutes disciplines</p>
-        <div class="tarifs__row"><button type="button" role="tab" id="tarifs-tab-0" class="tarifs__tab" aria-selected="true" aria-controls="tarifs-panel-0" data-tab="0">Abonnements<small>6</small></button><button type="button" role="tab" id="tarifs-tab-1" class="tarifs__tab" aria-selected="false" aria-controls="tarifs-panel-1" data-tab="1">Sans engagement<small>4</small></button></div>
-      </div>
-      <div class="tarifs__group tarifs__group--studio">
-        <p class="tarifs__group-label">Studio seulement</p>
-        <div class="tarifs__row"><button type="button" role="tab" id="tarifs-tab-2" class="tarifs__tab" aria-selected="false" aria-controls="tarifs-panel-2" data-tab="2">Cours studio<small>2</small></button></div>
-      </div>
+    <p class="eyebrow eyebrow--light tarifs__choose">Choisissez votre formule</p>
+    <div class="tarifs__tabs" role="tablist" aria-label="Choisissez votre formule">
+      <button type="button" role="tab" id="tarifs-tab-0" class="tarifs__tab" aria-selected="true" aria-controls="tarifs-panel-0" data-tab="0">
+        <span class="tarifs__check" aria-hidden="true"></span>
+        <span class="tarifs__tab-title">Avec engagement</span>
+        <span class="tarifs__tab-desc">Toutes disciplines · engagement 6 mois · le meilleur prix</span>
+      </button>
+      <button type="button" role="tab" id="tarifs-tab-1" class="tarifs__tab" aria-selected="false" aria-controls="tarifs-panel-1" data-tab="1">
+        <span class="tarifs__check" aria-hidden="true"></span>
+        <span class="tarifs__tab-title">Sans engagement</span>
+        <span class="tarifs__tab-desc">Cartes toutes disciplines · venez quand vous voulez</span>
+      </button>
+      <button type="button" role="tab" id="tarifs-tab-2" class="tarifs__tab" aria-selected="false" aria-controls="tarifs-panel-2" data-tab="2">
+        <span class="tarifs__check" aria-hidden="true"></span>
+        <span class="tarifs__tab-title">Studio seul</span>
+        <span class="tarifs__tab-desc">Pilates au sol, Barre Sculpt, Aequinox, Yin Yoga</span>
+      </button>
     </div>
 
-    <div class="tarifs__panel" id="tarifs-panel-0" role="tabpanel" aria-labelledby="tarifs-tab-0" style="--cols:3">
-      <p class="tarifs__sub">Toutes disciplines · engagement 6 mois</p>
+    <div class="tarifs__panel tarifs__panel--sage" id="tarifs-panel-0" role="tabpanel" aria-labelledby="tarifs-tab-0">
       <div class="tarifs__grid">
-        <article class="offer-card">
-          <h3 class="offer-card__name">4 cours</h3>
-          <p class="offer-card__price">108 €<span>/ mois</span></p>
-          <p class="offer-card__use">1 fois par semaine</p>
-          <a class="btn offer-card__btn" href="https://backoffice.bsport.io/checkout/4121/subscription/32001?force=true" target="_blank" rel="noopener">Je m'abonne</a>
+        <article class="price-card">
+          <h3 class="price-card__name">Abonnement<br>4 séances / mois</h3>
+          <p class="price-card__price"><b>108 €</b> <span>Soit 27 €/séance</span></p>
+          <ul class="price-card__list">
+            <li>Engagement 6 mois</li>
+          </ul>
+          <a class="btn price-card__btn" href="https://backoffice.bsport.io/checkout/4121/subscription/32001?force=true" target="_blank" rel="noopener">Je m’abonne</a>
         </article>
-        <article class="offer-card is-reco">
-          <span class="offer-card__reco">Recommandé</span>
-          <h3 class="offer-card__name">6 cours</h3>
-          <p class="offer-card__price">149 €<span>/ mois</span></p>
-          <p class="offer-card__use">1 à 2 fois par semaine</p>
-          <a class="btn offer-card__btn" href="https://backoffice.bsport.io/checkout/4121/subscription/59979?force=true" target="_blank" rel="noopener">Je m'abonne</a>
+        <article class="price-card">
+          <h3 class="price-card__name">Abonnement<br>6 séances / mois</h3>
+          <p class="price-card__price"><b>149 €</b> <span>Soit 24,83 €/séance</span></p>
+          <ul class="price-card__list">
+            <li>Engagement 6 mois</li>
+          </ul>
+          <a class="btn price-card__btn" href="https://backoffice.bsport.io/checkout/4121/subscription/59979?force=true" target="_blank" rel="noopener">Je m’abonne</a>
         </article>
-        <article class="offer-card">
-          <h3 class="offer-card__name">8 cours</h3>
-          <p class="offer-card__price">198 €<span>/ mois</span></p>
-          <p class="offer-card__use">2 fois par semaine</p>
-          <a class="btn offer-card__btn" href="https://backoffice.bsport.io/checkout/4121/subscription/32011?force=true" target="_blank" rel="noopener">Je m'abonne</a>
+        <article class="price-card">
+          <h3 class="price-card__name">Abonnement<br>8 séances / mois</h3>
+          <p class="price-card__price"><b>198 €</b> <span>Soit 24,75 €/séance</span></p>
+          <ul class="price-card__list">
+            <li>Engagement 6 mois</li>
+          </ul>
+          <a class="btn price-card__btn" href="https://backoffice.bsport.io/checkout/4121/subscription/32011?force=true" target="_blank" rel="noopener">Je m’abonne</a>
         </article>
-        <article class="offer-card">
-          <h3 class="offer-card__name">12 cours</h3>
-          <p class="offer-card__price">250 €<span>/ mois</span></p>
-          <p class="offer-card__use">3 fois par semaine</p>
-          <a class="btn offer-card__btn" href="https://backoffice.bsport.io/checkout/4121/subscription/43785?force=true" target="_blank" rel="noopener">Je m'abonne</a>
+        <article class="price-card">
+          <h3 class="price-card__name">Abonnement<br>12 séances / mois</h3>
+          <p class="price-card__price"><b>250 €</b> <span>Soit 20,83 €/séance</span></p>
+          <ul class="price-card__list">
+            <li>Engagement 6 mois</li>
+          </ul>
+          <a class="btn price-card__btn" href="https://backoffice.bsport.io/checkout/4121/subscription/43785?force=true" target="_blank" rel="noopener">Je m’abonne</a>
         </article>
-        <article class="offer-card is-apart">
-          <h3 class="offer-card__name">Day Club</h3>
-          <p class="offer-card__price">189 €<span>/ mois</span></p>
-          <p class="offer-card__use">Lundi au vendredi, 8h30 à 17h</p>
-          <a class="btn offer-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/815166/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je m'abonne</a>
+        <article class="price-card">
+          <h3 class="price-card__name">Abonnement<br>Day Club</h3>
+          <p class="price-card__price"><b>189 €</b> <span>par mois</span></p>
+          <ul class="price-card__list">
+            <li>Illimité du lundi au vendredi, 8h30–17h</li>
+            <li>Hors soirées et week-ends</li>
+            <li>Engagement 6 mois</li>
+          </ul>
+          <a class="btn price-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/815166/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je m’abonne</a>
         </article>
-        <article class="offer-card is-apart">
-          <h3 class="offer-card__name">Illimité</h3>
-          <p class="offer-card__price">350 €<span>/ mois</span></p>
-          <p class="offer-card__use">Tous les cours, à toute heure</p>
-          <a class="btn offer-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/682920/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je m'abonne</a>
+        <article class="price-card">
+          <h3 class="price-card__name">Abonnement<br>Illimité</h3>
+          <p class="price-card__price"><b>350 €</b> <span>par mois</span></p>
+          <ul class="price-card__list">
+            <li>Tous les cours, à toute heure</li>
+            <li>Engagement 6 mois</li>
+          </ul>
+          <a class="btn price-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/682920/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je m’abonne</a>
         </article>
       </div>
     </div>
-    <div class="tarifs__panel" id="tarifs-panel-1" role="tabpanel" aria-labelledby="tarifs-tab-1" style="--cols:4" hidden>
-      <p class="tarifs__sub">Cartes de séances · toutes disciplines</p>
+    <div class="tarifs__panel tarifs__panel--cream" id="tarifs-panel-1" role="tabpanel" aria-labelledby="tarifs-tab-1" hidden>
       <div class="tarifs__grid">
-        <article class="offer-card">
-          <h3 class="offer-card__name">À l'unité</h3>
-          <p class="offer-card__price">35 €</p>
-          <p class="offer-card__use">Pour venir quand vous voulez</p>
-          <a class="btn offer-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/681951/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je réserve</a>
+        <article class="price-card">
+          <h3 class="price-card__name">Séance<br>à l’unité</h3>
+          <p class="price-card__price"><b>35 €</b> <span>la séance</span></p>
+          <ul class="price-card__list">
+            <li>Sans engagement</li>
+          </ul>
+          <a class="btn price-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/681951/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je réserve</a>
         </article>
-        <article class="offer-card">
-          <h3 class="offer-card__name">5 séances</h3>
-          <p class="offer-card__price">155 €</p>
-          <p class="offer-card__use">Valable 2 mois</p>
-          <a class="btn offer-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/681961/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je réserve</a>
+        <article class="price-card">
+          <h3 class="price-card__name">Carte<br>5 séances</h3>
+          <p class="price-card__price"><b>155 €</b> <span>Soit 31 €/séance</span></p>
+          <ul class="price-card__list">
+            <li>Sans engagement</li>
+            <li>Valable 2 mois</li>
+          </ul>
+          <a class="btn price-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/681961/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je réserve</a>
         </article>
-        <article class="offer-card">
-          <h3 class="offer-card__name">10 séances</h3>
-          <p class="offer-card__price">290 €</p>
-          <p class="offer-card__use">Valable 4 mois</p>
-          <a class="btn offer-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/681962/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je réserve</a>
+        <article class="price-card">
+          <h3 class="price-card__name">Carte<br>10 séances</h3>
+          <p class="price-card__price"><b>290 €</b> <span>Soit 29 €/séance</span></p>
+          <ul class="price-card__list">
+            <li>Sans engagement</li>
+            <li>Valable 4 mois</li>
+          </ul>
+          <a class="btn price-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/681962/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je réserve</a>
         </article>
-        <article class="offer-card">
-          <h3 class="offer-card__name">20 séances</h3>
-          <p class="offer-card__price">560 €</p>
-          <p class="offer-card__use">Valable 6 mois</p>
-          <a class="btn offer-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/681963/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je réserve</a>
+        <article class="price-card">
+          <h3 class="price-card__name">Carte<br>20 séances</h3>
+          <p class="price-card__price"><b>560 €</b> <span>Soit 28 €/séance</span></p>
+          <ul class="price-card__list">
+            <li>Sans engagement</li>
+            <li>Valable 6 mois</li>
+          </ul>
+          <a class="btn price-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/681963/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je réserve</a>
         </article>
       </div>
     </div>
-    <div class="tarifs__panel" id="tarifs-panel-2" role="tabpanel" aria-labelledby="tarifs-tab-2" style="--cols:2" hidden>
-      <p class="tarifs__sub">Pilates au sol, Barre Sculpt, Aequinox uniquement</p>
+    <div class="tarifs__panel tarifs__panel--outline" id="tarifs-panel-2" role="tabpanel" aria-labelledby="tarifs-tab-2" hidden>
       <div class="tarifs__grid">
-        <article class="offer-card is-apart">
-          <h3 class="offer-card__name">Abonnement Studio</h3>
-          <p class="offer-card__price">78 €<span>/ mois</span></p>
-          <p class="offer-card__use">4 séances par mois · engagement 6 mois</p>
-          <a class="btn offer-card__btn" href="https://backoffice.bsport.io/checkout/4121/subscription/32013?force=true" target="_blank" rel="noopener">Je m'abonne</a>
+        <article class="price-card">
+          <h3 class="price-card__name">Abonnement Studio<br>4 séances / mois</h3>
+          <p class="price-card__price"><b>78 €</b> <span>Soit 19,50 €/séance</span></p>
+          <ul class="price-card__list">
+            <li>Pilates au sol, Barre Sculpt, Aequinox, Yin Yoga</li>
+            <li>Engagement 6 mois</li>
+          </ul>
+          <a class="btn price-card__btn" href="https://backoffice.bsport.io/checkout/4121/subscription/32013?force=true" target="_blank" rel="noopener">Je m’abonne</a>
         </article>
-        <article class="offer-card">
-          <h3 class="offer-card__name">Séance studio à l'unité</h3>
-          <p class="offer-card__price">25 €</p>
-          <p class="offer-card__use">Sans engagement</p>
-          <a class="btn offer-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/681955/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je réserve</a>
+        <article class="price-card">
+          <h3 class="price-card__name">Séance Studio<br>à l’unité</h3>
+          <p class="price-card__price"><b>25 €</b> <span>la séance</span></p>
+          <ul class="price-card__list">
+            <li>Pilates au sol, Barre Sculpt, Aequinox, Yin Yoga</li>
+            <li>Sans engagement</li>
+          </ul>
+          <a class="btn price-card__btn" href="https://backoffice.bsport.io/customer/payment/pass/681955/?membership=4121&amp;force=true" target="_blank" rel="noopener">Je réserve</a>
         </article>
       </div>
     </div>
@@ -692,6 +728,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20261116g" defer></script>
+<script src="js/main.js?v=20261116h" defer></script>
 </body>
 </html>

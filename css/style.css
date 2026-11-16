@@ -418,60 +418,63 @@ html.mnav-open { overflow: hidden; }
 /* ---------- Tarifs ---------- */
 .tarifs__head { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
 
-/* Offre découverte : bandeau beige, large et bas */
+/* Offre découverte : bandeau crème, large et bas */
 .trial {
   display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 36px;
-  padding: 22px 24px 22px 32px; margin-bottom: 56px; border-radius: 6px; background: var(--cream); color: var(--navy);
+  padding: 24px 24px 24px 32px; margin-bottom: 64px; border-radius: 32px; background: #F4F0E8; color: #2A3A43;
 }
 .trial__main { padding-right: 36px; border-right: 1px solid var(--line); }
-.trial__label { font-size: 11.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--text-brown); margin-bottom: 4px; }
+.trial__label { font-size: 11.5px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--text-brown); margin-bottom: 6px; }
 .trial__title { font-family: var(--serif); font-size: 34px; line-height: 1; white-space: nowrap; }
-.trial__text { font-size: 16px; line-height: 1.5; max-width: 440px; }
-.trial__btn { border-radius: 4px; white-space: nowrap; }
+.trial__text { font-size: 16px; line-height: 1.5; max-width: 520px; }
+.trial__btn { white-space: nowrap; }
 
-/* Onglets : « Toutes disciplines » (2 onglets) | « Studio seulement » */
-.tarifs__tabs { display: flex; align-items: flex-end; margin-bottom: 24px; border-bottom: 1px solid rgba(255, 255, 255, .25); }
-.tarifs__group { display: flex; flex-direction: column; gap: 8px; }
-.tarifs__group--studio { margin-left: 40px; padding-left: 40px; border-left: 1px solid rgba(255, 255, 255, .25); }
-.tarifs__group-label { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--sage); }
-.tarifs__row { display: flex; gap: 40px; }
+/* Choix de la formule : 3 grands boutons à contour sauge, l'actif rempli avec une pastille cochée */
+.tarifs__choose { margin-bottom: 18px; }
+.tarifs__tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
 .tarifs__tab {
-  font: inherit; font-family: var(--serif); font-size: 30px; padding: 0 0 14px; margin-bottom: -1px; cursor: pointer;
-  border: 0; border-bottom: 2px solid transparent; background: none; color: rgba(255, 255, 255, .62);
-  transition: color .25s, border-color .25s;
+  position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; text-align: left;
+  padding: 22px 64px 22px 26px; border: 1.5px solid #A2A293; border-radius: 32px; background: transparent; color: var(--white);
+  font: inherit; cursor: pointer; transition: background-color .25s, border-color .25s;
 }
-.tarifs__tab:hover { color: var(--white); }
-.tarifs__tab small { font-family: var(--sans); font-size: 12px; margin-left: 8px; vertical-align: 6px; padding: 2px 7px; border-radius: 99px; border: 1px solid currentColor; }
-.tarifs__tab[aria-selected="true"] { color: var(--white); border-bottom-color: var(--white); }
+.tarifs__tab:hover { background: rgba(162, 162, 147, .15); }
+.tarifs__tab-title { font-family: var(--serif); font-size: 28px; line-height: 1.1; }
+.tarifs__tab-desc { font-size: 14px; line-height: 1.45; color: var(--light-2); }
+.tarifs__check { position: absolute; top: 22px; right: 22px; width: 26px; height: 26px; border-radius: 50%; border: 1.5px solid #A2A293; }
+.tarifs__tab[aria-selected="true"] { background: #A2A293; }
+.tarifs__tab[aria-selected="true"] .tarifs__tab-desc { color: var(--white); }
+.tarifs__tab[aria-selected="true"] .tarifs__check { background: var(--white); border-color: var(--white); }
+.tarifs__tab[aria-selected="true"] .tarifs__check::after {
+  content: ""; position: absolute; inset: 4px; background: #A2A293;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+}
 
 .tarifs__panel[hidden] { display: none; }
-.tarifs__sub { font-size: 15px; color: var(--light-2); margin-bottom: 22px; }
-.tarifs__grid { display: grid; grid-template-columns: repeat(var(--cols), 1fr); gap: 16px; }
+/* Grille de 3 colonnes ; une rangée incomplète est centrée */
+.tarifs__grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+.tarifs__grid > * { flex: 0 1 calc((100% - 40px) / 3); }
 
-/* Cartes : nom et prix sur une ligne, rythme sous un filet, bouton */
-.offer-card {
-  position: relative; display: grid; grid-template-columns: 1fr auto;
-  grid-template-areas: "name price" "use use" "btn btn"; column-gap: 16px; align-items: baseline;
-  padding: 28px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, .14); background: rgba(255, 255, 255, .07); color: var(--white);
+/* Cartes de prix (inspirées de l'ancien site) : coins très arrondis, titre serif sur deux lignes, gros prix */
+.price-card {
+  --pc-bg: #A2A293; --pc-text: var(--white); --pc-border: #A2A293; --pc-btn-bg: var(--white); --pc-btn-text: #2A3A43;
+  display: flex; flex-direction: column; gap: 18px; padding: 32px; border-radius: 32px;
+  background: var(--pc-bg); color: var(--pc-text); border: 1.5px solid var(--pc-border);
 }
-.offer-card__name { grid-area: name; font-size: 26px; font-weight: 600; line-height: 1.15; }
-.offer-card__price { grid-area: price; font-family: var(--serif); font-size: 40px; line-height: 1; text-align: right; white-space: nowrap; }
-.offer-card__price span { display: block; margin-top: 2px; font-family: var(--sans); font-size: 13px; color: var(--light-2); }
-.offer-card__use { grid-area: use; font-size: 15px; color: var(--light-2); margin: 10px 0 24px; padding-top: 14px; border-top: 1px solid rgba(255, 255, 255, .22); }
-.offer-card__btn { grid-area: btn; align-self: end; justify-content: center; background: var(--white); color: var(--navy); border-radius: 4px; }
-.offer-card__btn:hover { background: var(--cream); }
-.offer-card__reco {
-  position: absolute; top: -11px; left: 24px; padding: 4px 9px; border-radius: 3px; white-space: nowrap;
-  font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; background: var(--navy); color: var(--white);
+.tarifs__panel--cream .price-card { --pc-bg: #F4F0E8; --pc-text: #2A3A43; --pc-border: #F4F0E8; --pc-btn-bg: #2A3A43; --pc-btn-text: var(--white); }
+.tarifs__panel--outline .price-card { --pc-bg: transparent; --pc-border: #A2A293; }
+.price-card__name { font-family: var(--serif); font-weight: 400; font-size: 32px; line-height: 1.08; }
+.price-card__price { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 10px; }
+.price-card__price b { font-family: var(--sans); font-weight: 700; font-size: 46px; line-height: 1; letter-spacing: -.02em; }
+.price-card__price span { font-family: var(--serif); font-size: 21px; font-style: italic; }
+.price-card__list { list-style: none; margin: 0; padding: 18px 0 0; border-top: 1px solid color-mix(in srgb, currentColor 30%, transparent); display: flex; flex-direction: column; gap: 10px; font-size: 15px; line-height: 1.45; }
+.price-card__list li { position: relative; padding-left: 30px; }
+.price-card__list li::before { content: ""; position: absolute; left: 0; top: 0; width: 20px; height: 20px; border-radius: 50%; border: 1.5px solid currentColor; }
+.price-card__list li::after {
+  content: ""; position: absolute; left: 4px; top: 4px; width: 12px; height: 12px; background: currentColor;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23000' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
 }
-/* Formule recommandée : même fond, contour blanc, seule à garder un bouton plein */
-.offer-card.is-reco { border-color: var(--white); }
-.offer-card.is-reco .offer-card__reco { background: var(--white); color: var(--navy); }
-.offer-card:not(.is-apart) .offer-card__btn { background: transparent; color: var(--white); border: 1px solid rgba(255, 255, 255, .55); }
-.offer-card:not(.is-apart) .offer-card__btn:hover { background: rgba(255, 255, 255, .08); }
-/* Formules à part (Day Club, Illimité, Abonnement Studio) : noir */
-.offer-card.is-apart { background: var(--ink); border-color: var(--ink); }
-
+.price-card__btn { margin-top: auto; justify-content: center; border-radius: 99px; background: var(--pc-btn-bg); color: var(--pc-btn-text); }
+.price-card__btn:hover { opacity: .9; }
 
 /* Parrainage et carte cadeau : deux cartes bleu nuit avec pictogramme */
 .perks { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 56px; }
@@ -625,7 +628,10 @@ a.perk:hover .perk__link { color: var(--sage); }
   .trial { grid-template-columns: 1fr; gap: 14px; padding: 22px; }
   .trial__main { padding-right: 0; border-right: 0; }
   .trial__btn { justify-self: start; }
-  .tarifs__grid { grid-template-columns: repeat(2, 1fr); }
+  .tarifs__grid > * { flex-basis: calc((100% - 20px) / 2); }
+  .tarifs__tab { padding: 18px 52px 18px 20px; }
+  .tarifs__tab-title { font-size: 24px; }
+  .tarifs__check { top: 18px; right: 16px; }
   .disc__grid { gap: 48px 20px; }
   .disc__photo { height: 480px; }
   .disc__card h3 { font-size: 40px; }
@@ -672,7 +678,10 @@ a.perk:hover .perk__link { color: var(--sage); }
   .perk { grid-template-columns: 1fr; padding: 24px; }
   .perk__icon { grid-row: auto; }
   .perk__link { grid-column: auto; }
-  .tarifs__grid { grid-template-columns: 1fr; }
+  .tarifs__grid > * { flex-basis: 100%; }
+  .tarifs__tabs { grid-template-columns: 1fr; gap: 10px; }
+  .trial { border-radius: 24px; }
+  .price-card { padding: 26px; border-radius: 28px; }
   .strength__benefits { grid-template-columns: 1fr; }
   .disc__grid { grid-template-columns: 1fr; }
   .disc__photo { height: 460px; }
@@ -699,15 +708,6 @@ a.perk:hover .perk__link { color: var(--sage); }
       linear-gradient(180deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, .3) 40%, rgba(0, 0, 0, .85) 100%),
       rgba(0, 0, 0, .2);
   }
-  /* Les 3 onglets sur une ligne, séparation « Studio seulement » conservée */
-  .tarifs__tabs { flex-wrap: nowrap; }
-  .tarifs__group--studio { margin-left: clamp(8px, 3vw, 12px); padding-left: clamp(8px, 3vw, 12px); }
-  .tarifs__row { gap: clamp(10px, 3.5vw, 14px); }
-  .tarifs__tab { font-size: clamp(14px, 4.5vw, 19px); padding-bottom: 10px; white-space: nowrap; }
-  .tarifs__tab small { display: none; }
-  /* Sur les plus petits écrans, l'étiquette passe sur 2 lignes plutôt que d'élargir le groupe */
-  .tarifs__group-label { font-size: 9px; letter-spacing: .1em; }
-  .offer-card { padding: 22px; }
   .grid-2 { grid-template-columns: 1fr; }
   .space { width: 78vw; }
   .space img { height: 380px; }
