@@ -146,7 +146,7 @@ html { scroll-padding-top: 76px; }
 .topbar__nav { display: flex; gap: 32px; flex-wrap: wrap; font-size: 16px; }
 .topbar__nav a { color: var(--white); text-decoration: none; }
 .topbar__nav a:hover { color: var(--light); }
-.topbar__logo img { height: 88px; width: auto; }
+.topbar__logo img { height: 123px; width: auto; }
 .topbar__cta { display: flex; justify-content: flex-end; }
 .topbar__burger { display: none; }
 /* Menu mobile : panneau beige depuis la gauche, fond assombri derrière */
@@ -172,7 +172,7 @@ html { scroll-padding-top: 76px; }
 html.mnav-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) { .mnav__panel, .mnav__backdrop { transition: none; } }
 
-.hero { padding-top: 136px; }
+.hero { padding-top: 171px; }
 .hero__content {
   position: relative; margin-top: auto;
   display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: end;
@@ -189,6 +189,15 @@ html.mnav-open { overflow: hidden; }
   font-family: var(--serif); font-weight: 400;
   font-size: clamp(48px, 7.4vw, 112px); line-height: 1; letter-spacing: -.01em;
 }
+.hero__subtitle { font-size: clamp(17px, 1.6vw, 21px); color: var(--light-2); }
+/* Pastilles des disciplines : contour blanc, mènent à la section Disciplines */
+.hero__pills { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.hero__pills a {
+  display: inline-block; padding: 8px 16px; border: 1px solid var(--white); border-radius: 99px;
+  color: var(--white); text-decoration: none; font-size: 14px; white-space: nowrap;
+  transition: background-color .2s, color .2s;
+}
+.hero__pills a:hover { background: var(--white); color: var(--navy); }
 .hero__side {
   display: flex; flex-direction: column; align-items: flex-start; gap: 18px;
   min-width: 300px; padding-left: 32px; border-left: 1px solid rgba(255, 255, 255, .35);
@@ -612,9 +621,9 @@ a.perk:hover .perk__link { color: var(--sage); }
   .hero__content { grid-template-columns: 1fr; gap: 28px; }
   .hero__side { min-width: 0; padding-left: 20px; }
   .topbar__logo { grid-column: 2; justify-self: center; }
-  .topbar__logo img { height: 64px; }
+  .topbar__logo img { height: 90px; }
   .topbar.is-scrolled .topbar__logo img { height: 42px; }
-  .hero { padding-top: 100px; }
+  .hero { padding-top: 126px; }
   html { scroll-padding-top: 64px; }
   .topbar__cta { grid-column: 3; }
   .topbar__burger {
@@ -658,12 +667,14 @@ a.perk:hover .perk__link { color: var(--sage); }
   .topbar { padding-left: var(--pad-x); padding-right: var(--pad-x); }
   .section { padding-top: 72px; padding-bottom: 72px; }
   .topbar .btn { padding: 8px 12px; font-size: 13px; }
-  .topbar__logo img { height: 54px; }
+  .topbar__logo img { height: 76px; }
   .topbar.is-scrolled .topbar__logo img { height: 40px; }
-  .hero { padding-top: 90px; }
+  .hero { padding-top: 112px; }
   .hero__content { padding: 0 var(--pad-x) 40px; }
   .hero__side { align-items: stretch; }
   .hero__promo { font-size: 12px; }
+  .hero__pills { gap: 8px; }
+  .hero__pills a { padding: 6px 12px; font-size: 13px; }
   .hero__veil {
     background:
       linear-gradient(180deg, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 22%, rgba(0, 0, 0, .3) 40%, rgba(0, 0, 0, .85) 100%),
