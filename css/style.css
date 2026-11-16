@@ -260,27 +260,29 @@ html.mnav-open { overflow: hidden; }
 .why__bar i { position: absolute; left: 0; top: 0; height: 100%; width: 0; background: var(--white); }
 
 /* ---------- Disciplines ---------- */
-/* Nos disciplines : photos en arche, premium en grand puis studio */
+/* Nos disciplines : grandes photos rectangulaires, dégradé bleu en bas avec numéro, étiquette et titre */
 .disc__head { text-align: center; max-width: 760px; margin: 0 auto 80px; display: flex; flex-direction: column; gap: 20px; align-items: center; }
-.disc__premium { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; max-width: 860px; margin: 0 auto; }
-.disc__studio { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
+.disc__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 56px 32px; }
 .disc__sep { display: flex; align-items: center; gap: 24px; margin: 96px 0 48px; font-size: 13px; letter-spacing: .16em; text-transform: uppercase; color: var(--text-brown); white-space: nowrap; }
 .disc__sep::before, .disc__sep::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 .disc__head + .disc__sep--first { margin-top: 0; }
 .disc__head .h2 { text-wrap: balance; }
-.disc__card { display: flex; flex-direction: column; gap: 12px; }
-.disc__arch { position: relative; border-radius: 999px 999px 4px 4px; overflow: hidden; height: 400px; margin-bottom: 14px; }
-.disc__studio .disc__arch { height: 380px; }
-.disc__arch img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s; }
-.disc__card:hover .disc__arch img { transform: scale(1.05); }
-.disc__arch b { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: var(--serif); font-weight: 400; font-size: 120px; color: var(--white); opacity: 0; transition: opacity .5s; }
-.disc__card:hover .disc__arch b { opacity: .9; }
-.disc__card small { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--navy); font-weight: 600; }
+.disc__card { display: flex; flex-direction: column; gap: 18px; }
+.disc__photo { position: relative; height: 580px; border-radius: 6px; overflow: hidden; background: var(--navy); }
+.disc__photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s; }
+.disc__card:hover .disc__photo img { transform: scale(1.04); }
+.disc__overlay {
+  position: absolute; left: 0; right: 0; bottom: 0; padding: 120px 28px 28px;
+  display: flex; flex-direction: column; gap: 8px;
+  background: linear-gradient(180deg, rgba(42, 58, 67, 0) 0%, rgba(42, 58, 67, .75) 45%, rgba(42, 58, 67, .96) 100%);
+  color: var(--white);
+}
+.disc__overlay b { font-family: var(--serif); font-weight: 400; font-size: 28px; line-height: 1; opacity: .85; }
+.disc__card small { font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--light); font-weight: 600; }
 .disc__card h3 { font-family: var(--serif); font-weight: 400; font-size: 48px; line-height: 1; }
-.disc__studio h3 { font-size: 32px; }
 .disc__card p { font-size: 16px; line-height: 1.6; color: var(--text-muted); }
-.disc__studio p { font-size: 15px; }
-.section--navy .disc__card small { color: var(--sage); }
+.disc__more { align-self: flex-start; color: var(--white); font-size: 15px; font-weight: 500; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, .5); padding-bottom: 2px; }
+.disc__more:hover { border-bottom-color: var(--white); }
 .section--navy .disc__card p { color: var(--light); }
 .section--navy .disc__sep { color: var(--light); }
 .section--navy .disc__sep::before, .section--navy .disc__sep::after { background: rgba(255, 255, 255, .22); }
@@ -624,10 +626,9 @@ a.perk:hover .perk__link { color: var(--sage); }
   .trial__main { padding-right: 0; border-right: 0; }
   .trial__btn { justify-self: start; }
   .tarifs__grid { grid-template-columns: repeat(2, 1fr); }
-  .disc__premium { grid-template-columns: 1fr; gap: 56px; }
-  .disc__studio { grid-template-columns: 1fr 1fr; gap: 40px 16px; }
-  .disc__arch { height: 360px; }
-  .disc__studio .disc__arch { height: 280px; }
+  .disc__grid { gap: 48px 20px; }
+  .disc__photo { height: 480px; }
+  .disc__card h3 { font-size: 40px; }
   .disc__sep { margin: 72px 0 40px; }
   .section { padding-top: 88px; padding-bottom: 88px; }
   .bf__grid { grid-template-columns: 1fr; }
@@ -673,9 +674,10 @@ a.perk:hover .perk__link { color: var(--sage); }
   .perk__link { grid-column: auto; }
   .tarifs__grid { grid-template-columns: 1fr; }
   .strength__benefits { grid-template-columns: 1fr; }
-  .disc__studio { grid-template-columns: 1fr; }
+  .disc__grid { grid-template-columns: 1fr; }
+  .disc__photo { height: 460px; }
+  .disc__overlay { padding: 100px 22px 22px; }
   .disc__sep { white-space: normal; text-align: center; gap: 14px; }
-  .disc__studio .disc__arch { height: 360px; }
   .disc__card h3 { font-size: 40px; }
   /* Marges latérales sur téléphone (16px auparavant, trop serré) */
   :root { --pad-x: 24px; }
