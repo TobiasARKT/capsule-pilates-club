@@ -235,6 +235,8 @@ html.mnav-open { overflow: hidden; }
 .why__wrap { max-width: var(--maxw); margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 96px; }
 .why__head { display: flex; flex-direction: column; gap: 22px; margin-bottom: 72px; }
 /* Ligne continue le long des arguments, remplie au fil du défilement */
+.nowrap { white-space: nowrap; }
+.why__subtitle { font-family: var(--serif); font-size: clamp(26px, 2.6vw, 36px); line-height: 1.15; color: var(--text-muted); margin-top: -10px; }
 .why__list { position: relative; }
 .why__line { position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--line); }
 .why__line i { position: absolute; left: -.5px; top: 0; width: 2px; height: 0; background: var(--navy); }
