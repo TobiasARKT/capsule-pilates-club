@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/studio-reformer.jpg">
-<link rel="stylesheet" href="css/style.css?v=20261116d">
+<link rel="stylesheet" href="css/style.css?v=20261116e">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -129,37 +129,47 @@
     <div class="stack-16">
       <p class="eyebrow eyebrow--sage">Du lundi 23 au lundi 30 novembre · places limitées</p>
       <h2 class="h2">Black Friday CAPSULE</h2>
+      <p class="lead lead--light">Une semaine pour vous lancer, ou pour offrir le plus beau des cadeaux.</p>
     </div>
-    <div class="grid grid--260">
+    <div class="bf__grid">
       <article class="offer">
-        <p class="offer__tag">Nouvel abonnement</p>
-        <h3 class="offer__title">Votre abonnement à moitié prix</h3>
-        <p class="offer__price">−50 % les 2 premiers mois</p>
-        <p class="offer__text">Engagement 12 mois. Sur tous les abonnements dès 4 cours. Exemple : 8 cours à 99 € au lieu de 198 € les 2 premiers mois.</p>
+        <div class="offer__media">
+          <img src="assets/img/black-friday-reformer.jpg" alt="Cours de Pilates Reformer en small group au studio CAPSULE" loading="lazy" width="1400" height="946">
+          <span class="offer__badge">−50 %</span>
+        </div>
+        <div class="offer__body">
+          <p class="offer__tag">Nouveaux membres</p>
+          <h3 class="offer__title">Votre abonnement à moitié prix</h3>
+          <p class="offer__price">−50 % les 2 premiers mois</p>
+          <p class="offer__box">Abonnement 4 cours : 54 € par mois les 2 premiers mois, puis 108 €</p>
+          <p class="offer__small">Sur tous les abonnements dès 4 cours par mois (hors Day Club illimité). Engagement 12 mois.</p>
+          <div class="offer__cta">
+            <a class="btn btn--light" href="https://wa.me/33623074274?text=Bonjour%2C%20je%20souhaite%20profiter%20de%20l%27offre%20Black%20Friday%20-50%20%25%20sur%20un%20abonnement%20CAPSULE." target="_blank" rel="noopener">Je profite de l’offre</a>
+            <p class="offer__small">Un message sur WhatsApp, et on s’occupe de tout.</p>
+          </div>
+        </div>
       </article>
       <article class="offer">
-        <p class="offer__tag">Déjà abonné·e</p>
-        <h3 class="offer__title">Venez plus souvent, au même prix</h3>
-        <p class="offer__price">2 mois au prix actuel</p>
-        <p class="offer__text">Engagement 12 mois. En passant à la formule supérieure. Exemple : de 4 à 8 cours, 108 € au lieu de 198 € pendant 2 mois.</p>
+        <div class="offer__media">
+          <img src="assets/img/pack-de-noel.jpg" alt="Le Pack de Noël CAPSULE : le studio Reformer orné d’un nœud cadeau" loading="lazy" width="600" height="400">
+          <span class="offer__badge">Idée cadeau</span>
+        </div>
+        <div class="offer__body">
+          <p class="offer__tag">À offrir</p>
+          <h3 class="offer__title">Le Pack de Noël</h3>
+          <p class="offer__price">143 € <s>204 €</s></p>
+          <ul class="offer__list">
+            <li>6 cours : 4 cours Reformer ou Strength, au choix, et 2 cours Studio</li>
+            <li>Les chaussettes CAPSULE</li>
+            <li>Une boisson au bar</li>
+          </ul>
+          <p class="offer__small">En vente jusqu’au 24 décembre.</p>
+          <div class="offer__cta">
+            <!-- TODO : lien bsport du Pack de Noël (aucun dans le code pour l'instant) -->
+            <a class="btn btn--light" href="">J’offre le Pack de Noël</a>
+          </div>
+        </div>
       </article>
-      <article class="offer">
-        <p class="offer__tag">Day Club illimité</p>
-        <h3 class="offer__title">Tous les cours en journée</h3>
-        <p class="offer__price">189 € / mois</p>
-        <p class="offer__text">Illimité du lundi au vendredi, de 8h30 à 17h. Pour les 10 premiers inscrits.</p>
-      </article>
-      <article class="offer">
-        <p class="offer__tag">À offrir</p>
-        <h3 class="offer__title">Le Pack de Noël</h3>
-        <p class="offer__price">143 € au lieu de 204 €</p>
-        <p class="offer__text">6 cours (2 Reformer, 2 Strength, 2 Studio), chaussettes CAPSULE et boisson. En vente jusqu’au 24 décembre.</p>
-      </article>
-    </div>
-    <div class="row-wrap">
-      <!-- TODO : lien bsport dédié à l'offre Black Friday -->
-      <a class="btn btn--light" href="https://www.instagram.com/capsulepilatesclub" target="_blank" rel="noopener">Je profite de l'offre</a>
-      <p class="muted-light">Offres abonnement avec engagement 12 mois. Ou par message Instagram, au studio ou au <a href="tel:+33613698889">06 13 69 88 89</a></p>
     </div>
   </div>
 </section>
@@ -676,6 +686,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20261116d" defer></script>
+<script src="js/main.js?v=20261116e" defer></script>
 </body>
 </html>
