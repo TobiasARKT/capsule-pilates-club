@@ -439,6 +439,14 @@ html.mnav-open { overflow: hidden; }
 .private__cap:hover { border-color: var(--sage); background: rgba(255, 255, 255, .03); }
 .private__cap h3 { font-family: var(--serif); font-weight: 400; font-size: 56px; line-height: 1; }
 .private__cap p { font-size: 14.5px; line-height: 1.55; color: var(--light); }
+/* Prix des formules, comme sur les cartes de tarifs : gros prix en gras, précision en serif à côté */
+.private__info { display: flex; flex-direction: column; gap: 14px; }
+/* Solo et Duo à la même hauteur malgré des précisions de longueur différente */
+.private__cap { align-self: stretch; }
+.private__price { display: flex; flex-wrap: wrap; align-items: baseline; column-gap: 8px; color: var(--white); }
+.private__cap .private__price { color: var(--white); }
+.private__price b { font-family: var(--sans); font-weight: 700; font-size: 34px; line-height: 1; letter-spacing: -.02em; }
+.private__price span { font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.2; color: var(--light); }
 .private__cap small { display: block; margin-bottom: 6px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--sage); }
 
 /* ---------- Tarifs ---------- */
