@@ -148,6 +148,7 @@ html { scroll-padding-top: 76px; }
 .topbar__nav a:hover { color: var(--light); }
 .topbar__logo img { height: 123px; width: auto; }
 .topbar__cta { display: flex; justify-content: flex-end; }
+.topbar__cta .btn { white-space: nowrap; }
 .topbar__burger { display: none; }
 /* Menu mobile : panneau beige depuis la gauche, fond assombri derrière */
 .mnav { display: none; position: fixed; inset: 0; z-index: 100; }
@@ -740,6 +741,7 @@ html.mnav-open { overflow: hidden; }
   .topbar { padding-left: var(--pad-x); padding-right: var(--pad-x); }
   .section { padding-top: 72px; padding-bottom: 72px; }
   .topbar .btn { padding: 8px 12px; font-size: 13px; }
+  .topbar__cta-more { display: none; }
   .topbar__logo img { height: 76px; }
   .topbar.is-scrolled .topbar__logo img { height: 40px; }
   .hero { padding-top: 112px; }
