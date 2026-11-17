@@ -413,7 +413,33 @@ html.mnav-open { overflow: hidden; }
 }
 .round-btn:hover { background: var(--navy); color: var(--white); }
 
-/* ---------- Coaching privé ---------- */
+/* ---------- Coaching privé : une seule bande horizontale ---------- */
+.private { position: relative; overflow: hidden; padding-top: 96px; padding-bottom: 96px; }
+/* Fondu du bleu des tarifs vers le noir du coaching privé */
+.tarifs { background: linear-gradient(180deg, var(--navy) 0%, var(--navy) calc(100% - 460px), #121419 100%); }
+.tarifs + .private { background: linear-gradient(180deg, #121419 0%, var(--ink) 15%); }
+/* Le « C » tient dans la hauteur de la section (marge de 40px en haut et en bas), seul le bord droit déborde */
+.private__mark { position: absolute; top: 40px; bottom: 40px; right: -80px; height: calc(100% - 80px); width: auto; aspect-ratio: 1; color: rgba(255, 255, 255, .018); pointer-events: none; }
+.private__row { position: relative; display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 20px; align-items: center; }
+.private__head { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding-right: 28px; }
+.private__head p { font-size: 16px; line-height: 1.6; color: var(--light); }
+.private__tag {
+  font-size: 11px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--sage);
+  padding: 7px 14px; border: 1px solid rgba(163, 165, 147, .55); border-radius: 99px;
+}
+/* Les deux boutons de réservation, côte à côte sur toute la largeur, sous le texte et les cartes */
+.private__ctas { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 20px; }
+.private__call { display: inline-flex; align-items: center; gap: 12px; }
+.private__phone { font-size: 15px; color: var(--light); text-decoration: none; white-space: nowrap; }
+.private__phone:hover { color: var(--white); }
+.private__cap {
+  display: flex; align-items: center; gap: 24px; padding: 40px 44px; min-height: 200px;
+  border: 1px solid rgba(255, 255, 255, .28); border-radius: 6px; transition: border-color .4s, background .4s;
+}
+.private__cap:hover { border-color: var(--sage); background: rgba(255, 255, 255, .03); }
+.private__cap h3 { font-family: var(--serif); font-weight: 400; font-size: 56px; line-height: 1; }
+.private__cap p { font-size: 14.5px; line-height: 1.55; color: var(--light); }
+.private__cap small { display: block; margin-bottom: 6px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--sage); }
 
 /* ---------- Tarifs ---------- */
 .tarifs__head { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; }
@@ -635,6 +661,12 @@ html.mnav-open { overflow: hidden; }
   .tarifs__tab-title { font-size: 24px; }
   .tarifs__check { top: 18px; right: 16px; }
   .disc__grid { gap: 48px 20px; }
+  .private__row { grid-template-columns: 1fr 1fr; }
+  .private__head { grid-column: 1 / -1; padding-right: 0; margin-bottom: 12px; }
+  .private__cap { padding: 32px; }
+  /* Tablette et téléphone : les boutons restent juste sous le texte, avant Solo et Duo */
+  .private__cap { order: 2; }
+  .private__ctas { margin: -8px 0 16px; }
   .disc__photo { height: 480px; }
   .disc__card h3 { font-size: 40px; }
   .disc__sep { margin: 72px 0 40px; }
@@ -687,6 +719,10 @@ html.mnav-open { overflow: hidden; }
   .price-card { padding: 26px; border-radius: 28px; }
   .strength__benefits { grid-template-columns: 1fr; }
   .disc__grid { grid-template-columns: 1fr; }
+  .private__row { grid-template-columns: 1fr; }
+  .private__cap { min-height: 0; padding: 26px 30px; }
+  .private__cap h3 { font-size: 44px; }
+  .private__mark { top: auto; bottom: 24px; height: 360px; right: -140px; }
   .disc__photo { height: 460px; }
   .disc__overlay { padding: 100px 22px 22px; }
   .disc__sep { white-space: normal; text-align: center; gap: 14px; }
