@@ -1,13 +1,6 @@
 [build]
   publish = "."
 
-# PRÉPROD : empêche l'indexation de l'URL *.netlify.app pendant les travaux.
-# À SUPPRIMER au moment de la bascule du domaine capsulepilatesclub.com.
-[[headers]]
-  for = "/*"
-  [headers.values]
-    X-Robots-Tag = "noindex, nofollow"
-
 [[headers]]
   for = "/assets/*"
   [headers.values]
