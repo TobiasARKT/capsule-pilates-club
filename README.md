@@ -29,6 +29,26 @@ Réglages Netlify, si l'on doit les refaire par l'API (`netlify api updateSite`)
 
 README.md et CONTRIBUER.md ne sont jamais servis en ligne : ils renvoient une 404 via `_redirects`.
 
+## Pixels publicitaires et cookies
+
+Tout est dans `js/consent.js`, chargé sur toutes les pages (sauf la 404).
+
+- **Activer** : renseigner `metaPixelId` (Meta) et/ou `googleTagIds` (`AW-…`, `G-…`) dans `CONFIG`, puis incrémenter le `?v=` de `consent.js` dans les pages.
+  Tant que ces champs sont vides, aucun traceur n'est chargé et aucun bandeau n'apparaît.
+- **Conformité CNIL** : rien n'est chargé avant le choix ; « Tout refuser » est aussi simple que « Tout accepter » ; le choix est gardé 6 mois et modifiable via « Gestion des cookies » (pied de page).
+- **Événements envoyés** (après accord seulement) :
+  - clic vers bsport → Meta `InitiateCheckout` / Google `begin_checkout` ;
+  - clic WhatsApp ou téléphone → `Contact` / `contact` ;
+  - page `merci.html` (contact ou newsletter envoyés) → `Lead` / `generate_lead`.
+- Conversions Google Ads : renseigner les « ID/étiquette » dans `googleAdsConversions`.
+- Vérification du domaine Meta : ajouter le code `facebook-domain-verification` en TXT dans la zone DNS OVH (pas besoin de mise en ligne).
+
+## Images
+
+Les photos sont servies en WebP (`assets/img/*.webp`, 1600 px max, qualité 78). Les JPG d'origine restent dans le dépôt.
+`og-capsule.jpg` (1200×630) est l'image d'aperçu pour les partages.
+Pour une nouvelle photo : l'ajouter en JPG, générer le WebP (même nom), et référencer le `.webp`.
+
 ## Aperçu local
 
     python3 -m http.server 5200
