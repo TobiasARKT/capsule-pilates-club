@@ -791,3 +791,22 @@ html.mnav-open { overflow: hidden; }
   .legal h2 { font-size: 24px; margin-top: 32px; }
   .legal p, .legal li { font-size: 15px; }
 }
+
+/* ---------- Bandeau de consentement aux cookies (js/consent.js) ---------- */
+.consent {
+  position: fixed; z-index: 200; left: 16px; right: 16px; bottom: 16px; margin: 0 auto; max-width: 720px;
+  display: flex; align-items: center; gap: 20px; padding: 18px 20px;
+  background: var(--cream, #f5f2ec); color: var(--text); border: 1px solid var(--line); border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, .18);
+}
+.consent__text { flex: 1; font-size: 14px; line-height: 1.55; }
+.consent__text a { text-decoration: underline; text-underline-offset: 2px; }
+.consent__actions { display: flex; gap: 10px; flex-shrink: 0; }
+.consent__btn {
+  padding: 10px 16px; border-radius: 6px; font: 500 14px/1 var(--sans); cursor: pointer;
+  background: var(--navy); color: #fff; border: 1px solid var(--navy);
+}
+@media (max-width: 600px) {
+  .consent { flex-direction: column; align-items: stretch; gap: 14px; left: 12px; right: 12px; bottom: 12px; }
+  .consent__actions .consent__btn { flex: 1; }
+}
