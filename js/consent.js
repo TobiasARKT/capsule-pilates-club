@@ -11,7 +11,7 @@
 
   var CONFIG = {
     // Meta (Instagram / Facebook) : Gestionnaire d'événements → ID du pixel, ex. '123456789012345'
-    metaPixelId: '',
+    metaPixelId: '1586839409190999',
     // Google : ID Google Ads (AW-…) et/ou Google Analytics 4 (G-…), ex. ['AW-123456789', 'G-ABCDE12345']
     googleTagIds: [],
     // Facultatif : conversions Google Ads (ID/étiquette), ex. { reservation: 'AW-123456789/AbC-dEfGhIj' }
