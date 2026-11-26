@@ -1,3 +1,6 @@
+# Le site ne doit répondre que sur www.capsulepilatesclub.com (évite les doublons pour Google)
+https://capsulepilatesclub.netlify.app/*  https://www.capsulepilatesclub.com/:splat  301!
+
 # Le site Framer n'avait qu'une page (/). Ajouter ici d'éventuelles anciennes URL.
 # /ancienne-url   /   301
 
