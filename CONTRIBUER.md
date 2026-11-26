@@ -40,6 +40,15 @@ Une fois tout validé, en regroupant les modifications :
 
 Si GitHub affiche « There isn't anything to compare », c'est que tout est déjà en ligne.
 
+## Avec Claude
+
+Consignes pour Claude quand il modifie ou met en ligne le site :
+
+- **Avant de commencer, de comparer les branches ou de mettre en ligne :** `git fetch origin`, puis `git pull` sur `test`.
+  Comparer toujours avec les branches distantes (`origin/test`, `origin/branche-principale`), jamais avec une copie locale qui peut dater de plusieurs jours.
+- **Travailler directement sur `test`.** Pas de branche supplémentaire (`claude/…` ou autre) poussée sur GitHub.
+- **Après une modification de `css/style.css` ou `js/main.js`,** incrémenter le `?v=` de leur lien dans les pages, sinon les navigateurs gardent l'ancienne version.
+
 ## En cas de problème sur le site public
 
 Netlify → projet `capsulepilatesclub` → *Deploys* → clique sur la version précédente (marquée *Published* avant la tienne) → *Publish deploy*.
