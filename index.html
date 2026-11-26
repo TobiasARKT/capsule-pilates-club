@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/img/hero-studio.webp">
-<link rel="stylesheet" href="css/style.css?v=20261126a">
+<link rel="stylesheet" href="css/style.css?v=20261126b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -78,8 +78,9 @@
 
   <div class="hero__content">
     <div class="hero__main">
-      <!-- Black Friday : masqué automatiquement après la date de data-hide-after (js/main.js) -->
+      <!-- Offres datées : masquées avant data-show-from et après data-hide-after (js/main.js) -->
       <a class="hero__promo" href="#black-friday" data-hide-after="2026-12-01"><b>BLACK FRIDAY</b>−50 % abonnements · +30 % de cours</a>
+      <a class="hero__promo" href="#black-friday" data-show-from="2026-12-01" data-hide-after="2026-12-25"><b>PACK DE NOËL</b>143 € · jusqu’au 24 décembre</a>
       <h1 class="hero__title">Pilates Reformer<br> &amp; Musculation</h1>
       <p class="hero__subtitle">Des résultats visibles, un bien-être durable.</p>
       <ul class="hero__pills" aria-label="Nos disciplines">
@@ -127,15 +128,21 @@
 
 <main>
 
-<section id="black-friday" class="section section--black" data-hide-after="2026-12-01">
+<!-- Black Friday jusqu’au 30/11 ; le Pack de Noël reste seul jusqu’au 24/12 -->
+<section id="black-friday" class="section section--black" data-hide-after="2026-12-25">
   <div class="container stack-40">
-    <div class="stack-16">
+    <div class="stack-16" data-show-from="2026-12-01">
+      <p class="eyebrow eyebrow--sage">Jusqu’au 24 décembre</p>
+      <h2 class="h2">Offrez CAPSULE pour Noël</h2>
+      <p class="lead lead--light">Six cours, nos chaussettes et une boisson au bar : le cadeau idéal pour faire découvrir le studio.</p>
+    </div>
+    <div class="stack-16" data-hide-after="2026-12-01">
       <p class="eyebrow eyebrow--sage">Du lundi 23 au lundi 30 novembre · places limitées</p>
       <h2 class="h2">Black Friday CAPSULE</h2>
       <p class="lead lead--light">Une semaine pour vous lancer, ou pour offrir le plus beau des cadeaux.</p>
     </div>
     <div class="bf__grid">
-      <article class="offer">
+      <article class="offer" data-hide-after="2026-12-01">
         <div class="offer__media">
           <img src="assets/img/cours-reformer.webp" alt="Cours de Pilates Reformer en small group au studio CAPSULE" loading="lazy" width="1400" height="946">
           <span class="offer__badge">−50 %</span>
@@ -152,7 +159,7 @@
           </div>
         </div>
       </article>
-      <article class="offer">
+      <article class="offer" data-hide-after="2026-12-01">
         <div class="offer__media">
           <img src="assets/img/reformer-box.webp" alt="La salle Reformer du studio CAPSULE" loading="lazy">
           <span class="offer__badge">+30 % de cours</span>
@@ -797,7 +804,7 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20261118a" defer></script>
+<script src="js/main.js?v=20261126a" defer></script>
 <script src="js/consent.js?v=20261119a" defer></script>
 </body>
 </html>

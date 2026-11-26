@@ -42,11 +42,16 @@
     });
   }
 
-  // Offres datées (Black Friday…) : masquées après data-hide-after (AAAA-MM-JJ)
+  // Offres datées (Black Friday, Noël…) : masquées après data-hide-after
+  // et avant data-show-from (AAAA-MM-JJ)
   var today = new Date();
   document.querySelectorAll('[data-hide-after]').forEach(function (el) {
     var limit = new Date(el.getAttribute('data-hide-after') + 'T00:00:00');
     if (!isNaN(limit) && today >= limit) el.setAttribute('data-hidden', '');
+  });
+  document.querySelectorAll('[data-show-from]').forEach(function (el) {
+    var start = new Date(el.getAttribute('data-show-from') + 'T00:00:00');
+    if (!isNaN(start) && today < start) el.setAttribute('data-hidden', '');
   });
 
   // Carrousel « L'univers CAPSULE »

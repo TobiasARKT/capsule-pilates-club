@@ -208,6 +208,8 @@ html.mnav-open { overflow: hidden; }
 
 /* ---------- Black Friday ---------- */
 .bf__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; align-items: stretch; }
+/* Après le Black Friday, le Pack de Noël reste seul : carte à largeur raisonnable */
+.bf__grid:has(> .offer[data-hidden]) { grid-template-columns: minmax(0, 520px); }
 .offer {
   border: 1px solid rgba(255,255,255,.35); border-radius: 12px; overflow: hidden;
   display: flex; flex-direction: column;
